@@ -1,1 +1,1 @@
-# SI_2022_lab1_183128
+Andrej Trajkovski 183128
