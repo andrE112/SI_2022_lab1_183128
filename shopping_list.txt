@@ -1,5 +1,6 @@
 avocado x 1
 doritos x 8
 banana x 3
-apple x 4
-toothpaste x 9
+cheese x 4
+toothpaste x 5
+lemon x 6
