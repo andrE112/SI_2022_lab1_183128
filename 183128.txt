@@ -1,0 +1,122 @@
+4.$ git clone https://github.com/andrE112/SI_2022_lab1_183128     Со оваа команда го клонирам репото на мојот компјутер.
+  cd SI_2022_lab1_183128                                          Влегувам во репото.
+
+5.$ git add README.md                                             Го додавам README.md во staging area.
+  $ git add shopping_list.txt                                     Го додавам shopping_list.txt во staging area.
+  $ git status                                                    Правам проверка дали е додаден.
+  $ git commit -m "Add 5 items to the shopping list"              Правам commit со порака "Add 5 items to the shopping list".
+
+6.$ git commit -a -m "Add quantities to the items."               Правам commit -а што прави автоматски да ги stage сите фајлови што се модифицирани и избришани,
+                                                                  но нови фајлови за кои што Git незнае нема да бидат земени во предвид.
+
+7.$ git branch branch1                                            Со овие две команди креирам две гранки со имиња "branch1" и "branch2".
+  $ git branch branch2
+
+
+
+8.$ git log
+commit 6130adb56145a5212eb8a53738951b83f481e159
+Author: Andrej Trajkovski <kratovoano@gmail.com>
+Date:   Sun Apr 10 15:06:42 2022 +0200
+
+    Add quantities to the items.
+
+commit eb2bd7141f4c8fc2ca1e33aa383a0313fde96391
+Author: Andrej Trajkovski <kratovoano@gmail.com>
+Date:   Sun Apr 10 15:06:01 2022 +0200
+
+    Add 5 items to the shopping list
+
+commit ea615bd8740d84bc3c735aace69a832b142e2c5b
+Author: andrE112 <44439997+andrE112@users.noreply.github.com>
+Date:   Sun Apr 10 15:02:28 2022 +0200
+
+    Initial commit
+
+
+9.$ git push --all origin                                         Со ова правам синхронизација на сите гранки со оддалечениот репозиториум.
+
+10.$ git checkout branch1                                         Со ова се префрлувам на гранката branch1.
+
+11.$ git commit -a -m "Change quantity of item #5"                Прави commit со новите измени и порака "Change quantity of item #5". Овој commit ќе биде во гранката branch1.
+
+12.$ git checkout master                                          Се префрлувам назад на гранката master.
+
+13.$ git commit -a -m "Change quantity of item #2"                Прави commit со новите измени и порака "Change quantity of item #2". Овој commit ќе биде во гранката master.
+
+14.$ git push --all origin                                        Синхронизација на сите гранки со оддалечениот репозиториум.
+
+15.$ git checkout branch2                                         Со ова се префрлувам на гранката branch2.
+
+16.$ git commit -a -m "Modify item #4"                            Прави commit со новите измени и порака "Modify item #4". Овој commit ќе биде во гранката branch2.
+
+17.$ git log
+commit 90a1d5988743770b9a5ced4c1144ff7ae7c3fe65
+Author: Andrej Trajkovski <kratovoano@gmail.com>
+Date:   Sun Apr 10 15:11:02 2022 +0200
+
+    Modify item #4
+
+commit 6130adb56145a5212eb8a53738951b83f481e159
+Author: Andrej Trajkovski <kratovoano@gmail.com>
+Date:   Sun Apr 10 15:06:42 2022 +0200
+
+    Add quantities to the items.
+
+commit eb2bd7141f4c8fc2ca1e33aa383a0313fde96391
+Author: Andrej Trajkovski <kratovoano@gmail.com>
+Date:   Sun Apr 10 15:06:01 2022 +0200
+
+    Add 5 items to the shopping list
+
+commit ea615bd8740d84bc3c735aace69a832b142e2c5b
+Author: andrE112 <44439997+andrE112@users.noreply.github.com>
+Date:   Sun Apr 10 15:02:28 2022 +0200
+
+    Initial commit
+
+
+18.$ git add shopping_list.txt                                    
+   $ git commit --amend -m "Modify item #4 and add item #6"            Го модифицираме последниот commit со новите измени и порака "Modify item #4 and add item #6". Овој commit ќе биде во гранката branch2.
+
+19.$ git log
+commit f32ff422befd2f3f53bbc0606c1b41eab44fb17c
+Author: Andrej Trajkovski <kratovoano@gmail.com>
+Date:   Sun Apr 10 15:11:02 2022 +0200
+
+    Modify item #4 and add item #6
+
+commit 6130adb56145a5212eb8a53738951b83f481e159
+Author: Andrej Trajkovski <kratovoano@gmail.com>
+Date:   Sun Apr 10 15:06:42 2022 +0200
+
+    Add quantities to the items.
+
+commit eb2bd7141f4c8fc2ca1e33aa383a0313fde96391
+Author: Andrej Trajkovski <kratovoano@gmail.com>
+Date:   Sun Apr 10 15:06:01 2022 +0200
+
+    Add 5 items to the shopping list
+
+commit ea615bd8740d84bc3c735aace69a832b142e2c5b
+Author: andrE112 <44439997+andrE112@users.noreply.github.com>
+Date:   Sun Apr 10 15:02:28 2022 +0200
+
+    Initial commit
+
+
+20.$ git checkout master                                          Се префрлувам назад на гранката master.
+   
+
+21.$ git merge branch1 -m "Merge branch1"                         Со ова ја спојувам гранката branch1 кон master. Спојувањето се извршува со 'recursive' стратегијата. 
+
+22.$ git merge branch2 -m "Merge branch2"                         Ќе се појави конфликт во спојувањето на гранката branch2 со master.
+   $ git diff                                                     За да го решиме конфликтот прво проверуваме каде настанал конфликтот,
+                                                                  истото може да се види со отварање на текст документот и ќе видиме дека GIT ни има додадено синтакса со која покажува кои се грешките,
+                                                                  тука изменуваме што сакаме да се земе при спојувањето.
+   $ git commit -a                                                За да го финализираме спојувањето откако сме го решиле конфликтот. Ќе се отвори message editor каде ќе стои првичната порака што ја ставивме при merge командата, правиме промена доколку сакаме и со пишување ":wq" па притискање enter завршуваме.
+   
+
+23.$ git add 183128.txt                                           Го додавам README.md во staging area.
+   $ git commit -m "Add docs"                                     Правам commit со порака "Add docs".
+   $ git push --all origin                                        Синхронизација на сите гранки со оддалечениот репозиториум.
