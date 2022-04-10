@@ -1,5 +1,5 @@
-avocado
-doritos
-banana
-apple
-toothpaste
+avocado x 1
+doritos x 2
+banana x 3
+apple x 4
+toothpaste x 5
